@@ -1,0 +1,4 @@
+/* VicStickers styles - full file available in repo after push */
+/* For full content see the local build; this is a placeholder to enable structure. */
+:root { --bg: #0c0c0e; --accent: #22d3ee; }
+body { font-family: system-ui; background: var(--bg); color: #f4f4f5; }
