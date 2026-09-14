@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/extras.css">
+  <script src="https://www.paypal.com/sdk/js?client-id=CLIENT_ID&currency=AUD&intent=capture"></script>
 </head>
 <body>
   <header class="header">
@@ -21,9 +22,7 @@
         <a href="contact.html">Contact</a>
       </nav>
       <div class="header-actions">
-        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
-          <span class="cart-count" id="cartCount">0</span>
-        </button>
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart"><span class="cart-count" id="cartCount">0</span></button>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -31,7 +30,7 @@
   <section class="page-hero">
     <div class="container">
       <h1>Checkout</h1>
-      <p>Pay securely with <strong>PayPal</strong>. Payments go to Brad.sumner91@gmail.com</p>
+      <p>Secure payment via <strong>PayPal</strong> · AUD · Brad.sumner91@gmail.com</p>
     </div>
   </section>
   <section class="checkout-section">
@@ -39,34 +38,17 @@
       <div class="checkout-grid">
         <div class="checkout-form">
           <h2>Shipping details</h2>
-          <div class="form-row">
-            <label for="buyerEmail">Your email</label>
-            <input type="email" id="buyerEmail" required placeholder="you@email.com">
-          </div>
-          <div class="form-row">
-            <label for="buyerName">Full name</label>
-            <input type="text" id="buyerName" required placeholder="Your name">
-          </div>
-          <div class="form-row">
-            <label for="address">Street address</label>
-            <input type="text" id="address" required placeholder="Street address">
-          </div>
-          <div class="form-row">
-            <label for="suburb">Suburb / City</label>
-            <input type="text" id="suburb" required placeholder="Melbourne">
-          </div>
+          <div class="form-row"><label for="buyerEmail">Your email</label><input type="email" id="buyerEmail" required placeholder="you@email.com"></div>
+          <div class="form-row"><label for="buyerName">Full name</label><input type="text" id="buyerName" required placeholder="Your name"></div>
+          <div class="form-row"><label for="address">Street address</label><input type="text" id="address" required placeholder="Street address"></div>
+          <div class="form-row"><label for="suburb">Suburb / City</label><input type="text" id="suburb" required placeholder="Melbourne"></div>
           <div class="stripe-row">
-            <div class="form-row">
-              <label for="state">State</label>
-              <select id="state"><option>VIC</option><option>NSW</option><option>QLD</option><option>SA</option><option>WA</option><option>TAS</option><option>NT</option><option>ACT</option></select>
-            </div>
-            <div class="form-row">
-              <label for="postcode">Postcode</label>
-              <input type="text" id="postcode" required placeholder="3000">
-            </div>
+            <div class="form-row"><label for="state">State</label><select id="state"><option>VIC</option><option>NSW</option><option>QLD</option><option>SA</option><option>WA</option><option>TAS</option><option>NT</option><option>ACT</option></select></div>
+            <div class="form-row"><label for="postcode">Postcode</label><input type="text" id="postcode" required placeholder="3000"></div>
           </div>
-          <div style="margin-top:1.5rem;padding:1.25rem;background:var(--bg);border:1px solid var(--border);border-radius:8px">
-            <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1rem">Click below to pay with PayPal. You’ll be redirected to complete payment securely.</p>
+          <div style="margin-top:1.5rem">
+            <h3 style="font-size:1rem;margin-bottom:0.75rem">Pay with PayPal</h3>
+            <div id="paypal-button-container"></div>
             <form id="paypalForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
               <input type="hidden" name="cmd" value="_xclick">
               <input type="hidden" name="business" value="Brad.sumner91@gmail.com">
@@ -75,16 +57,15 @@
               <input type="hidden" name="amount" id="ppAmount" value="0.00">
               <input type="hidden" name="no_shipping" value="2">
               <input type="hidden" name="custom" id="ppCustom" value="">
-              <button type="submit" class="btn btn-primary full-width" id="paypalBtn" style="background:#0070ba;color:#fff">Pay with PayPal</button>
+              <button type="submit" class="btn full-width" id="paypalBtn" style="background:#0070ba;color:#fff;margin-top:0.5rem">Pay with PayPal</button>
             </form>
-            <p style="font-size:0.75rem;color:var(--text-muted);margin-top:0.75rem;text-align:center">Merchant: Brad.sumner91@gmail.com · AUD</p>
+            <p style="font-size:0.75rem;color:var(--text-muted);margin-top:0.75rem;text-align:center">Payments → Brad.sumner91@gmail.com · AUD</p>
           </div>
         </div>
         <aside class="order-summary">
           <h2>Order summary</h2>
           <div id="orderSummaryLines"><p class="empty-cart">Cart is empty – <a href="shop.html">go shopping</a></p></div>
           <div class="order-total"><span>Total</span><span id="orderTotal">$0.00</span></div>
-          <p style="font-size:0.8rem;color:var(--text-muted);margin-top:1rem">After payment, email your shipping address to Brad.sumner91@gmail.com so we can dispatch.</p>
         </aside>
       </div>
     </div>
@@ -92,26 +73,19 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand"><span class="logo-icon">◆</span> VicStickers</div>
-      <div class="footer-links">
-        <a href="shop.html">Shop</a>
-        <a href="plates.html">Custom Plates</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-      </div>
-      <p class="copyright">© 2026 VicStickers. Payments via PayPal · Brad.sumner91@gmail.com</p>
+      <div class="footer-links"><a href="shop.html">Shop</a><a href="plates.html">Custom Plates</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      <p class="copyright">© 2026 VicStickers · PayPal · Brad.sumner91@gmail.com</p>
     </div>
   </footer>
   <div class="cart-overlay" id="cartOverlay"></div>
   <aside class="cart-drawer" id="cartDrawer">
     <div class="cart-header"><h3>Your Cart</h3><button class="close-cart" id="closeCart">×</button></div>
     <div class="cart-items" id="cartItems"><p class="empty-cart">Your cart is empty</p></div>
-    <div class="cart-footer">
-      <div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div>
-      <button class="btn btn-primary full-width" id="checkoutBtn" disabled>Checkout</button>
-    </div>
+    <div class="cart-footer"><div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div><button class="btn btn-primary full-width" id="checkoutBtn" disabled>Checkout</button></div>
   </aside>
   <div class="toast" id="toast"></div>
   <script src="js/app.js"></script>
+  <script src="js/paypal-config.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const cart = JSON.parse(localStorage.getItem('vicstickers-cart') || '[]');
@@ -120,19 +94,24 @@
       document.getElementById('ppAmount').value = total.toFixed(2);
       document.getElementById('ppItemName').value = names.slice(0, 120);
       document.getElementById('paypalForm').addEventListener('submit', function (e) {
-        if (total <= 0) { e.preventDefault(); alert('Your cart is empty.'); return; }
+        if (total <= 0) { e.preventDefault(); alert('Cart is empty.'); return; }
         const email = document.getElementById('buyerEmail').value;
         const name = document.getElementById('buyerName').value;
         const address = document.getElementById('address').value;
-        if (!email || !name || !address) { e.preventDefault(); alert('Please fill in email, name and address.'); return; }
-        document.getElementById('ppCustom').value = JSON.stringify({
-          buyerEmail: email, buyerName: name, address: address,
-          suburb: document.getElementById('suburb').value,
-          state: document.getElementById('state').value,
-          postcode: document.getElementById('postcode').value,
-          items: cart
-        });
+        if (!email || !name || !address) { e.preventDefault(); alert('Fill in email, name and address.'); return; }
+        document.getElementById('ppCustom').value = JSON.stringify({ buyerEmail: email, buyerName: name, address: address, suburb: document.getElementById('suburb').value, state: document.getElementById('state').value, postcode: document.getElementById('postcode').value, items: cart });
       });
+      if (typeof paypal !== 'undefined' && window.PAYPAL_CLIENT_ID && window.PAYPAL_CLIENT_ID !== 'CLIENT_ID') {
+        document.getElementById('paypalBtn').style.display = 'none';
+        paypal.Buttons({
+          createOrder: (data, actions) => actions.order.create({ purchase_units: [{ description: names.slice(0, 120), amount: { value: total.toFixed(2), currency_code: 'AUD' } }] }),
+          onApprove: (data, actions) => actions.order.capture().then(function (details) {
+            localStorage.removeItem('vicstickers-cart');
+            alert('Payment complete. Thank you!');
+            window.location.href = 'index.html';
+          })
+        }).render('#paypal-button-container');
+      }
     });
   </script>
 </body>
