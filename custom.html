@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Order | VicStickers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/extras.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">◆</span> Vic<span>Stickers</span></a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="plates.html">Custom Plates</a>
+        <a href="custom.html">Custom Order</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart"><span class="cart-count" id="cartCount">0</span></button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Custom order</h1>
+      <p>Kids, pets, cars, tradies, sports, shops, weddings, plates — describe what you need.</p>
+    </div>
+  </section>
+  <section class="custom">
+    <div class="container custom-grid">
+      <div class="custom-info">
+        <h2>Stickers for anyone</h2>
+        <p>Free design help and a digital proof before we print. Outdoor vinyl with UV laminate.</p>
+        <ul class="feature-list">
+          <li>Any size or shape</li>
+          <li>Exact VIC plate sizes available</li>
+          <li>PayPal checkout (Brad.sumner91@gmail.com)</li>
+          <li>Ships Australia-wide</li>
+        </ul>
+        <p style="color:var(--text-muted);font-size:0.9rem">Or email <a href="mailto:Brad.sumner91@gmail.com" style="color:var(--accent)">Brad.sumner91@gmail.com</a> with your idea.</p>
+      </div>
+      <form class="custom-form" id="customForm">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="product">What do you need?</label>
+          <select id="product" name="product" required>
+            <option value="">Select…</option>
+            <option>Custom die-cut stickers (any design)</option>
+            <option>Bumper / car stickers</option>
+            <option>Kids / school labels</option>
+            <option>Pet name stickers</option>
+            <option>Sports / team stickers</option>
+            <option>Tradie / toolbox stickers</option>
+            <option>Business / logo stickers</option>
+            <option>Wedding / event stickers</option>
+            <option>Custom number plate sticker</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="size">Plate size (if applicable)</label>
+          <select id="size" name="size">
+            <option value="">Select…</option>
+            <option>Standard 372 × 132 mm</option>
+            <option>Slimline 372 × 100 mm</option>
+            <option>Other / not a plate</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="details">Details</label>
+          <textarea id="details" name="details" rows="4" placeholder="Text, colours, quantity…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Send quote request</button>
+      </form>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="logo-icon">◆</span> VicStickers</div>
+      <div class="footer-links">
+        <a href="shop.html">Shop</a>
+        <a href="plates.html">Custom Plates</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <p class="copyright">© 2026 VicStickers · PayPal Brad.sumner91@gmail.com</p>
+    </div>
+  </footer>
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header"><h3>Your Cart</h3><button class="close-cart" id="closeCart">×</button></div>
+    <div class="cart-items" id="cartItems"><p class="empty-cart">Your cart is empty</p></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div>
+      <button class="btn btn-primary full-width" id="checkoutBtn" disabled>Checkout</button>
+    </div>
+  </aside>
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
