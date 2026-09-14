@@ -1,13 +1,18 @@
-/* VicStickers – Stickers for anything + custom plates */
+/* VicStickers – Stickers for anyone */
 const products = [
-  { id: 'diecut-pack', name: 'Custom Die-Cut Stickers', desc: 'Any shape, any design. Outdoor vinyl. Logos, art, branding.', price: 24.90, image: 'images/diecut.svg', tag: 'Popular' },
-  { id: 'bumper', name: 'Bumper Stickers', desc: 'Tough outdoor vinyl for cars, utes & trailers.', price: 14.90, image: 'images/bumper.svg', tag: null },
-  { id: 'clear-vinyl', name: 'Clear Vinyl Stickers', desc: 'Transparent background. Matte or gloss.', price: 19.90, image: 'images/clear.svg', tag: 'Premium' },
-  { id: 'laptop', name: 'Laptop & Device Stickers', desc: 'Indoor vinyl, clean removal. Phones, laptops, tablets.', price: 12.90, image: 'images/laptop.svg', tag: null },
-  { id: 'business-pack', name: 'Business / Logo Pack', desc: '50–200+ pcs. Free design review. Packaging & branding.', price: 39.90, image: 'images/business.svg', tag: null },
-  { id: 'holographic', name: 'Holographic Stickers', desc: 'Rainbow shift finish. Eye-catching for events & merch.', price: 29.90, image: 'images/holographic.svg', tag: 'Limited' },
-  { id: 'window', name: 'Window & Glass Stickers', desc: 'Static cling or permanent. Shops, cars, home.', price: 16.90, image: 'images/window.svg', tag: null },
-  { id: 'plate-decal', name: 'Number Plate Style Decal', desc: 'Classic plate look. Bumper, wall, gift.', price: 9.90, image: 'images/plate-decal.svg', tag: 'From $9.90' },
+  { id: 'diecut-pack', name: 'Custom Die-Cut Stickers', desc: 'Any shape, any design. Logos, art, branding, personal.', price: 24.90, image: 'images/diecut.svg', tag: 'Most popular' },
+  { id: 'bumper', name: 'Bumper & Car Stickers', desc: 'Cars, utes, vans, trailers. Outdoor vinyl that lasts.', price: 14.90, image: 'images/bumper.svg', tag: null },
+  { id: 'laptop', name: 'Laptop & Device Stickers', desc: 'Laptops, phones, tablets, consoles. Clean peel.', price: 12.90, image: 'images/laptop.svg', tag: null },
+  { id: 'business-pack', name: 'Business & Logo Pack', desc: 'Packaging, shop windows, trade vehicles, branding.', price: 39.90, image: 'images/business.svg', tag: 'Bulk' },
+  { id: 'holographic', name: 'Holographic Stickers', desc: 'Rainbow finish. Merch, events, kids, influencers.', price: 29.90, image: 'images/holographic.svg', tag: 'Limited' },
+  { id: 'window', name: 'Window & Glass Stickers', desc: 'Shops, offices, cars, home. Cling or permanent.', price: 16.90, image: 'images/window.svg', tag: null },
+  { id: 'clear-vinyl', name: 'Clear Vinyl Stickers', desc: 'Transparent background. Premium look on any surface.', price: 19.90, image: 'images/clear.svg', tag: 'Premium' },
+  { id: 'kids-pack', name: 'Kids & School Stickers', desc: 'Name labels, lunchboxes, water bottles, reward charts.', price: 14.90, image: 'images/diecut.svg', tag: 'New' },
+  { id: 'pet-pack', name: 'Pet Name & ID Stickers', desc: 'Collars, bowls, crates, cars. Custom pet names.', price: 11.90, image: 'images/bumper.svg', tag: null },
+  { id: 'sports', name: 'Sports & Team Stickers', desc: 'Footy, netball, cricket, clubs, numbers, names.', price: 13.90, image: 'images/laptop.svg', tag: null },
+  { id: 'trades', name: 'Trades & Toolbox Stickers', desc: 'Tools, utes, site gear. Name & logo for tradies.', price: 15.90, image: 'images/business.svg', tag: null },
+  { id: 'event', name: 'Wedding & Event Stickers', desc: 'Favours, invitations, thank-yous, party labels.', price: 22.90, image: 'images/holographic.svg', tag: null },
+  { id: 'plate-decal', name: 'Number Plate Style Decal', desc: 'Classic plate look. Gift, wall, bumper. From $9.90', price: 9.90, image: 'images/plate-decal.svg', tag: 'From $9.90' },
   { id: 'custom-black', name: 'Classic Black Plate Sticker', desc: '372×132 mm. Your text. Outdoor vinyl.', price: 12.90, image: 'images/custom-black.svg', tag: null },
   { id: 'custom-slim', name: 'Slimline Plate Sticker', desc: '372×100 mm. Modern low-profile look.', price: 11.90, image: 'images/custom-slim.svg', tag: null }
 ];
@@ -60,12 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('menuToggle')?.addEventListener('click', () => { document.getElementById('nav')?.classList.toggle('open'); });
   document.querySelectorAll('.nav a').forEach(link => { link.addEventListener('click', () => document.getElementById('nav')?.classList.remove('open')); });
   document.getElementById('customForm')?.addEventListener('submit', (e) => { e.preventDefault(); showToast('Quote request sent!'); e.target.reset(); });
-  document.getElementById('checkoutForm')?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const cfg = window.STRIPE_CONFIG || { demoMode: true };
-    if (cfg.demoMode) { showToast('Demo payment successful!'); cart = []; saveCart(); setTimeout(() => { window.location.href = 'index.html'; }, 1800); return; }
-    showToast('Connect real backend for live payments');
-  });
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
@@ -78,10 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProductGrid('shopGrid', products);
   const summaryEl = document.getElementById('orderSummaryLines');
   if (summaryEl) {
-    if (cart.length === 0) summaryEl.innerHTML = '<p class="empty-cart">Cart is empty – <a href="shop.html">go shopping</a></p>';
+    const cartData = JSON.parse(localStorage.getItem('vicstickers-cart') || '[]');
+    if (cartData.length === 0) summaryEl.innerHTML = '<p class="empty-cart">Cart is empty – <a href="shop.html">go shopping</a></p>';
     else {
-      summaryEl.innerHTML = cart.map(i => `<div class="order-line"><span>${i.name} × ${i.qty}</span><span>$${(i.price * i.qty).toFixed(2)}</span></div>`).join('');
-      const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+      summaryEl.innerHTML = cartData.map(i => `<div class="order-line"><span>${i.name} × ${i.qty}</span><span>$${(i.price * i.qty).toFixed(2)}</span></div>`).join('');
+      const total = cartData.reduce((s, i) => s + i.price * i.qty, 0);
       const totalEl = document.getElementById('orderTotal');
       if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
     }
