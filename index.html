@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VicStickers | Premium Vinyl Stickers & Custom Plates – Victoria</title>
+  <meta name="description" content="Victoria's home for premium vinyl stickers, custom die-cut decals, and compliant L & P plates.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">◆</span> Vic<span>Stickers</span></a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="plates.html">L & P Plates</a>
+        <a href="custom.html">Custom</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 2H2"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="eyebrow">Based in Victoria • Ships Australia-wide</p>
+        <h1>Premium Vinyl Stickers<br>& Custom Plates</h1>
+        <p class="hero-sub">Weatherproof vinyl, die-cut perfection, and fully compliant L & P plates. Designed and printed locally for cars, businesses, and creatives across Victoria.</p>
+        <div class="hero-cta">
+          <a href="shop.html" class="btn btn-primary">Shop Stickers</a>
+          <a href="custom.html" class="btn btn-outline">Start Custom Order</a>
+        </div>
+        <div class="hero-trust">
+          <div><strong>2–4 day</strong> local turnaround</div>
+          <div><strong>Free</strong> design assistance</div>
+          <div><strong>Waterproof</strong> outdoor vinyl</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="sticker-stack">
+          <div class="mock-sticker s1">VIC</div>
+          <div class="mock-sticker s2">◆</div>
+          <div class="mock-sticker s3">P</div>
+          <div class="mock-sticker s4">Custom</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories">
+    <div class="container">
+      <div class="cat-grid">
+        <a href="shop.html" class="cat-card"><div class="cat-icon">✂</div><h3>Die-Cut Vinyl</h3><p>Precision cut to any shape</p></a>
+        <a href="shop.html" class="cat-card"><div class="cat-icon">🚗</div><h3>Bumper & Car</h3><p>Tough outdoor vinyl</p></a>
+        <a href="plates.html" class="cat-card"><div class="cat-icon">L</div><h3>L & P Plates</h3><p>VIC road-compliant</p></a>
+        <a href="custom.html" class="cat-card"><div class="cat-icon">✦</div><h3>Fully Custom</h3><p>Your design, our print</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Vinyl Stickers</h2>
+        <p>High-quality outdoor vinyl with UV laminate.</p>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <div style="text-align:center;margin-top:2rem"><a href="shop.html" class="btn btn-outline">View All Products</a></div>
+    </div>
+  </section>
+
+  <section class="plates">
+    <div class="container">
+      <div class="section-header">
+        <h2>VIC Compliant L & P Plates</h2>
+        <p>150 mm square • Correct colours • Outdoor vinyl or magnetic.</p>
+      </div>
+      <div class="plate-grid">
+        <div class="plate-card">
+          <div class="plate-preview l-plate">L</div>
+          <h3>Learner Plate (L)</h3>
+          <p>Yellow background, black L.</p>
+          <div class="price">from $12.90</div>
+          <button class="btn btn-sm add-to-cart" data-id="l-plate" data-name="Learner Plate Set (Vinyl)" data-price="12.90">Add to Cart</button>
+        </div>
+        <div class="plate-card">
+          <div class="plate-preview p1-plate">P</div>
+          <h3>Red P Plate (P1)</h3>
+          <p>Red background, white P.</p>
+          <div class="price">from $12.90</div>
+          <button class="btn btn-sm add-to-cart" data-id="p1-plate" data-name="Red P Plate Set (Vinyl)" data-price="12.90">Add to Cart</button>
+        </div>
+        <div class="plate-card">
+          <div class="plate-preview p2-plate">P</div>
+          <h3>Green P Plate (P2)</h3>
+          <p>Green background, white P.</p>
+          <div class="price">from $12.90</div>
+          <button class="btn btn-sm add-to-cart" data-id="p2-plate" data-name="Green P Plate Set (Vinyl)" data-price="12.90">Add to Cart</button>
+        </div>
+        <div class="plate-card featured">
+          <div class="badge">Popular</div>
+          <div class="plate-preview magnetic">MAG</div>
+          <h3>Magnetic Learner Set</h3>
+          <p>Easy on/off magnetic L plates.</p>
+          <div class="price">$24.90</div>
+          <button class="btn btn-sm add-to-cart" data-id="mag-l" data-name="Magnetic Learner Plate Set" data-price="24.90">Add to Cart</button>
+        </div>
+      </div>
+      <p class="compliance-note">All L & P plates meet current Victoria display requirements. Confirm with VicRoads if regulations change.</p>
+      <div style="text-align:center;margin-top:1.5rem"><a href="plates.html" class="btn btn-outline">Full Plates Range</a></div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container about-grid">
+      <div>
+        <h2>Made in Victoria</h2>
+        <p>VicStickers is a local Victorian business focused on high-quality vinyl stickers and road-compliant plates. Premium outdoor-rated vinyl and UV-protective laminates keep your stickers sharp through Melbourne weather and long road trips.</p>
+        <p style="margin-top:1rem"><a href="about.html" class="btn btn-outline">Learn more about us</a></p>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><span>2–4</span><small>Day turnaround</small></div>
+        <div class="stat"><span>100%</span><small>Outdoor vinyl</small></div>
+        <div class="stat"><span>VIC</span><small>Based & proud</small></div>
+        <div class="stat"><span>Free</span><small>Design help</small></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="logo-icon">◆</span> VicStickers<p>Premium vinyl stickers & custom plates for Victoria.</p></div>
+      <div class="footer-links">
+        <a href="shop.html">Shop</a>
+        <a href="plates.html">L & P Plates</a>
+        <a href="custom.html">Custom</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="copyright">© 2026 VicStickers. Built for Victoria. Not affiliated with VicRoads.</p>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header"><h3>Your Cart</h3><button class="close-cart" id="closeCart">×</button></div>
+    <div class="cart-items" id="cartItems"><p class="empty-cart">Your cart is empty</p></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div>
+      <button class="btn btn-primary full-width" id="checkoutBtn" disabled>Checkout</button>
+      <p class="cart-note">Demo storefront. Connect Shopify or Stripe for real orders.</p>
+    </div>
+  </aside>
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
