@@ -1,42 +1,34 @@
-# VicStickers – Multi-page Vinyl Stickers & Custom Plates Store (Victoria)
+# VicStickers – Custom Number Plate Stickers & Vinyl (Victoria)
 
-Complete demo online store for premium vinyl stickers and VIC-compliant L & P plates.
+## Exact plate specifications
 
-## What’s included
+| Format | Dimensions |
+|--------|------------|
+| Standard | 372 × 132 mm |
+| Slimline (6 characters) | 372 × 100 mm |
+| Slimline (5 characters) | 317 × 100 mm |
+| Slimline (3–4 characters) | 250 × 100 mm |
 
-### Multi-page site
-- `index.html` – Home
-- `shop.html` – Full product catalogue
-- `plates.html` – L / P1 / P2 / Magnetic plates + variants
-- `custom.html` – Custom quote form
-- `about.html` – About the business
-- `contact.html` – Contact details
-- `checkout.html` – Stripe-style checkout stub (demo only)
+Outdoor vinyl stickers sized to these official proportions. **Not** official VicRoads plates.
 
-### Sample product images (SVG)
-All in `/images/`
+## What's new (100% better update)
 
-### Social & packaging graphics
-- social-square.svg, social-story.svg, packaging-label.svg
+1. Trust bar (outdoor vinyl, exact sizes, free design, fast turnaround)
+2. How it works – 4 clear steps
+3. Customer testimonials
+4. FAQ accordion (official vs decorative, sizes, durability, shipping)
+5. Materials pills on products (Waterproof, UV laminate, exact mm)
+6. Custom order form – size selector with exact VIC dimensions
+7. Newsletter signup stub
+8. Sticky mobile CTA
+9. Refined product cards and spacing
+10. Specs bar + size table on Custom Plates page
 
-### Shopify readiness
-See `/shopify/README-SHOPIFY.md`
+## Live
 
-## How to run locally
+Repo: https://github.com/Killab666/vicstickers  
+Enable GitHub Pages or deploy to Netlify for a public URL.
 
-```bash
-python3 -m http.server 8080
-```
+## Legal
 
-## Live demo
-Once GitHub Pages is enabled: https://killab666.github.io/vicstickers/
-
-## Next steps for real money
-1. Enable GitHub Pages (Settings → Pages → Deploy from main)
-2. Or connect the repo to Netlify / Vercel (free)
-3. Add your Stripe test key in `js/stripe-config.js`
-4. For live payments, add a backend PaymentIntent endpoint
-5. Update contact email/phone and add ABN if required
-6. Register a .com.au domain and point it here
-
-Built for Victoria. Not affiliated with VicRoads.
+Includes Privacy Policy and Terms of Service pages.
