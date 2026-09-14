@@ -1,34 +1,28 @@
-# VicStickers – Custom Number Plate Stickers & Vinyl (Victoria)
+# VicStickers – Live Store
 
-## Exact plate specifications
+**Stickers for anyone · Custom plates from $9.90 · PayPal: Brad.sumner91@gmail.com**
 
-| Format | Dimensions |
-|--------|------------|
-| Standard | 372 × 132 mm |
-| Slimline (6 characters) | 372 × 100 mm |
-| Slimline (5 characters) | 317 × 100 mm |
-| Slimline (3–4 characters) | 250 × 100 mm |
+## Publish in 2 minutes (iPhone-friendly)
 
-Outdoor vinyl stickers sized to these official proportions. **Not** official VicRoads plates.
+### Option A – GitHub Pages (free)
+1. Open https://github.com/Killab666/vicstickers
+2. Tap **Settings** → **Pages** (left menu)
+3. Under **Source**: Deploy from a branch
+4. Branch: **main** · Folder: **/ (root)** → Save
+5. Wait 1–2 minutes, then open:
+   **https://killab666.github.io/vicstickers/**
 
-## What's new (100% better update)
+### Option B – Netlify (recommended, free, fast)
+1. Open https://app.netlify.com/drop on your phone or computer
+2. Or: https://app.netlify.com → Add new site → Import from Git → GitHub → **vicstickers**
+3. Deploy settings: leave empty (static site). Click Deploy
+4. You get a URL like `https://something.netlify.app` – rename it in Site settings
 
-1. Trust bar (outdoor vinyl, exact sizes, free design, fast turnaround)
-2. How it works – 4 clear steps
-3. Customer testimonials
-4. FAQ accordion (official vs decorative, sizes, durability, shipping)
-5. Materials pills on products (Waterproof, UV laminate, exact mm)
-6. Custom order form – size selector with exact VIC dimensions
-7. Newsletter signup stub
-8. Sticky mobile CTA
-9. Refined product cards and spacing
-10. Specs bar + size table on Custom Plates page
+### One-click Netlify
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Killab666/vicstickers)
 
-## Live
+## PayPal
+Payments go to **Brad.sumner91@gmail.com** (AUD).
 
-Repo: https://github.com/Killab666/vicstickers  
-Enable GitHub Pages or deploy to Netlify for a public URL.
-
-## Legal
-
-Includes Privacy Policy and Terms of Service pages.
+## Pages
+- Home, Shop, Custom Plates, Custom Order, About, Contact, Checkout, Privacy, Terms
