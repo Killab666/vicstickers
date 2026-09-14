@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Number Plates | VicStickers Victoria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">◆</span> Vic<span>Stickers</span></a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="plates.html">Custom Plates</a>
+        <a href="custom.html">Custom Order</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/><path d="M6 6L5 2H2"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Custom Number Plates</h1>
+      <p>Personalised vinyl plate stickers &amp; decals. Choose your text, style and colour.</p>
+    </div>
+  </section>
+  <section class="plates" style="padding-top:1rem;background:transparent">
+    <div class="container">
+      <div class="plate-grid">
+        <div class="plate-card featured">
+          <div class="badge">Popular</div>
+          <h3>Classic Black Plate</h3>
+          <p>Black background, white characters. Your choice of letters &amp; numbers.</p>
+          <div class="price">from $18.90</div>
+          <button class="btn btn-sm add-to-cart" data-id="custom-black" data-name="Classic Black Custom Plate Decal" data-price="18.90">Add to Cart</button>
+        </div>
+        <div class="plate-card">
+          <h3>Slimline Custom</h3>
+          <p>Narrower format, modern look.</p>
+          <div class="price">from $16.90</div>
+          <button class="btn btn-sm add-to-cart" data-id="custom-slim" data-name="Slimline Custom Plate Decal" data-price="16.90">Add to Cart</button>
+        </div>
+        <div class="plate-card">
+          <h3>Euro Style</h3>
+          <p>European look with blue side band.</p>
+          <div class="price">from $19.90</div>
+          <button class="btn btn-sm add-to-cart" data-id="custom-euro" data-name="Euro Style Custom Plate Decal" data-price="19.90">Add to Cart</button>
+        </div>
+        <div class="plate-card">
+          <h3>Colour Custom</h3>
+          <p>Custom colour backgrounds.</p>
+          <div class="price">from $21.90</div>
+          <button class="btn btn-sm add-to-cart" data-id="custom-colour" data-name="Colour Custom Plate Decal" data-price="21.90">Add to Cart</button>
+        </div>
+        <div class="plate-card">
+          <h3>Heritage Style</h3>
+          <p>Retro 1930s Victorian look.</p>
+          <div class="price">from $16.90</div>
+          <button class="btn btn-sm add-to-cart" data-id="heritage-decal" data-name="Heritage-Style Decorative Decal" data-price="16.90">Add to Cart</button>
+        </div>
+        <div class="plate-card">
+          <h3>Standard Plate Style</h3>
+          <p>Classic number-plate look.</p>
+          <div class="price">from $14.90</div>
+          <button class="btn btn-sm add-to-cart" data-id="plate-decal" data-name="Number Plate Style Decal" data-price="14.90">Add to Cart</button>
+        </div>
+      </div>
+      <div style="max-width:700px;margin:3rem auto 0;text-align:center">
+        <p style="color:var(--text-muted);margin-bottom:1.5rem">These are decorative vinyl stickers and decals only. They are <em>not</em> official VicRoads registration plates. Official personalised plates: <a href="https://vplates.com.au" target="_blank" rel="noopener" style="color:var(--accent)">vplates.com.au</a>.</p>
+        <a href="custom.html" class="btn btn-primary">Request a Custom Plate Design</a>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="logo-icon">◆</span> VicStickers</div>
+      <div class="footer-links">
+        <a href="shop.html">Shop</a>
+        <a href="plates.html">Custom Plates</a>
+        <a href="custom.html">Custom</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <p class="copyright">© 2026 VicStickers. Not affiliated with VicRoads.</p>
+    </div>
+  </footer>
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header"><h3>Your Cart</h3><button class="close-cart" id="closeCart">×</button></div>
+    <div class="cart-items" id="cartItems"><p class="empty-cart">Your cart is empty</p></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div>
+      <button class="btn btn-primary full-width" id="checkoutBtn" disabled>Checkout</button>
+    </div>
+  </aside>
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
